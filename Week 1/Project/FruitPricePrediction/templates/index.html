@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fruit Price Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>🍉 Fruit Price Prediction</h2>
+
+    <form action="/predict" method="POST">
+        
+        <label>Select Fruit:</label>
+        <select name="fruit" required>
+            <option value="Apple">Apple 🍎</option>
+            <option value="Banana">Banana 🍌</option>
+            <option value="Grapes">Grapes 🍇</option>
+            <option value="Mango">Mango 🥭</option>
+            <option value="Watermelon">Watermelon 🍉</option>
+        </select>
+
+        <label>Select Month:</label>
+        <select name="month" required>
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
+        </select>
+
+        <button type="submit">Predict Price</button>
+    </form>
+
+   {% if prediction_text %}
+       <p class="result">{{ prediction_text }}</p>
+   {% endif %}
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
