@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ML Algorithm Comparison</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>🌸 Iris Flower Prediction 🌸</h2>
+
+    <form action="/predict" method="POST">
+
+        <input type="number" step="any" name="sepal_length"
+       placeholder="Sepal Length (cm)"
+       min="4" max="8" required>
+
+        <input type="number" step="any" name="sepal_width"
+            placeholder="Sepal Width (cm)"
+            min="2" max="4.5" required>
+            
+        <input type="number" step="any" name="petal_length"
+            placeholder="Petal Length (cm)"
+            min="1" max="7" required>
+            
+        <input type="number" step="any" name="petal_width"
+            placeholder="Petal Width (cm)"
+            min="0.1" max="2.5" required>
+
+        
+        <select name="algorithm" required>
+            <option>Logistic Regression</option>
+            <option>KNN</option>
+            <option>SVM</option>
+        </select>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+        <p class="result">{{ prediction_text }}</p>
+        <p class="result">{{ algorithm_text }}</p>
+    {% endif %}
+</div>
+
+</body>
+</html>
